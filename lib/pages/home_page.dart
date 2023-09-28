@@ -9,42 +9,16 @@ class HomePage extends ConsumerWidget {
   // int counter = 0;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(counter_Provider);
+    final name = ref.watch(counter_Provider);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Riverpod Demo'),
+        title: Text(name),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              counter.toString(),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      ref
-                          .read(counter_Provider.notifier)
-                          .update((state) => state + 1);
-                    },
-                    child: Text("+")),
-                SizedBox(
-                  width: 10,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      ref
-                          .read(counter_Provider.notifier)
-                          .update((state) => state - 1);
-                    },
-                    child: Text("-")),
-              ],
-            )
-          ],
-        ),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text(name)]),
       ),
     );
   }
