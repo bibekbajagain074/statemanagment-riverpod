@@ -1,4 +1,4 @@
-import 'package:countapp/user.dart';
+import 'package:countapp/model/user.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final userProvider = StateNotifierProvider < UserNotifier, User>

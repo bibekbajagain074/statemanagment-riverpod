@@ -55,10 +55,11 @@ class User {
 
 class UserNotifier extends StateNotifier<User> {
   UserNotifier(super.state);
-  void upDatename(String n, ) {
+  void upDatename(
+    String n,
+  ) {
     // state = User(age: state.age, name: n); doing this for all is complex so we use data class as above
     state = state.usercopyWith(name: n);
-    
   }
 
   void upDateAge(int a) {
