@@ -1,5 +1,5 @@
+import 'package:countapp/user.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final counter_Provider = Provider<String>((ref) {
-  return "Your Name";
-});
+final userProvider = StateNotifierProvider < UserNotifier, User>
+   ((ref) => UserNotifier(const User(age: 0, name: "")));
